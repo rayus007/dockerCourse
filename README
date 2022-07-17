@@ -1,0 +1,14 @@
+/* The Dockerfile and the Application need to be on the machine*/
+docker build -t python-app:0.1 .
+
+/* We can verify that the main image was pulled, also our custom Image is created based on the main and our Dockerfile*/
+docker images
+
+/* Now that our custom image is create, we will create a container that has our app*/
+docker run --name myPython --rm -it -d python-app:0.1
+
+/* It can be verified by the following command*/
+docker ps -a
+
+/* You can also execute it by any browser, by copying the IPAddress and port, e.g. http://172.17.0.2:5000/ */
+docker inspect myPython
