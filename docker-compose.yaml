@@ -56,9 +56,9 @@ services:
 
   portainer:
     container_name: myPortainer
-    image: portainer/portainer-ce:2.9.3
+    image: portainer/portainer-ce
     ports:
-      - "8000:8000"
+      - "127.0.0.1:9001:9000"
       - "9443:9443"
     restart: always
     volumes:
@@ -87,6 +87,7 @@ volumes:
   jenkins-data:
   portainer_data:
   nexus-data:
-  
+    external: false
+
 networks:
   myBridgeNetwork:
